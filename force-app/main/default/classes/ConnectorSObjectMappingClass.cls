@@ -2,7 +2,7 @@
  * @description       : igleton pattern class to provide Sobject mapping configured for connector app with details which will be accessed using class property.
  * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
  * @group             : 
- * @last modified on  : 03-18-2024
+ * @last modified on  : 03-27-2024
  * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 **/
 public with sharing class ConnectorSObjectMappingClass {
@@ -33,6 +33,9 @@ public with sharing class ConnectorSObjectMappingClass {
     * @param objname 
     **/
     public void getSObjectMapping(String objname){
-        sobjMapping = [SELECT id,IsActive__c FROM SObject_Mapping__c WHERE Name=:objname order by createddate Asc Limit 1];
+        List<SObject_Mapping__c> sobjMappingList = new List<SObject_Mapping__c>([SELECT id,IsActive__c FROM SObject_Mapping__c WHERE Name=:objname order by createddate Asc Limit 1]);
+        if(!sobjMappingList.isEmpty()){
+            sobjMapping = sobjMappingList.get(0);
+        }
     }
 }
