@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Relationship_with_parent__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Required for child Relationship Type. 
+API name of the parent object relationship field (Lookup / Master-Details) on object mentioned in Parent SObject Mapping field. 
+E.g. If SObject Name is OpportunityLineItem then OpportunityId or any other custom lookup or master detail field referencing Opportunity.</inlineHelpText>
+    <label>Relationship with parent</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Netsuite_Instance__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>Select NetSuite sandbox or production environment.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Select NetSuite sandbox or production environment.</inlineHelpText>
+    <label>Netsuite Instance</label>
+    <referenceTo>NS_Sandboxes__c</referenceTo>
+    <relationshipLabel>Connector Configurations</relationshipLabel>
+    <relationshipName>Connector_Configurations</relationshipName>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>
