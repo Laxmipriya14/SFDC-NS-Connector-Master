@@ -2,7 +2,7 @@
  * @description       : Sigleton pattern class to provide connector configuration details which will be accessed using class property.
  * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
  * @group             : 
- * @last modified on  : 03-18-2024
+ * @last modified on  : 03-27-2024
  * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 **/
 public with sharing class ConnectorConfigurationsClass {
@@ -31,7 +31,11 @@ public with sharing class ConnectorConfigurationsClass {
     * @author ChangeMeIn@UserSettingsUnder.SFDoc | 02-23-2024 
     **/
     public void getConfigurations(){
-        config = [SELECT id,Enable_Sync__c,JSON_Mapping__c,Netsuite_Instance__c,NS_Requests_Delete_Days__c,Schedule_Delete_Job__c,Schedule__c FROM Connector_Configurations__c order by createddate Asc Limit 1];
+        List<Connector_Configurations__c> configList = new List<Connector_Configurations__c>([SELECT id,Enable_Sync__c,JSON_Mapping__c,Netsuite_Instance__c,NS_Requests_Delete_Days__c,Schedule_Delete_Job__c,Schedule__c FROM Connector_Configurations__c order by createddate Asc Limit 1]);
+        if(!configList.isEmpty()){
+            config = configList.get(0);
+        }
+       
     }
 
 }
