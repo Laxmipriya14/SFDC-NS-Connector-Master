@@ -46,7 +46,7 @@
 		<name>Flow</name>
 	</types>
 	<types>
-		<members>Netsuite_Connector_App</members>
+		<members>Yantras_NetSuite_Connector</members>
 		<name>CustomApplication</name>
 	</types>
 	<types>
@@ -91,7 +91,7 @@
 		<members>NS_Sandboxes__c</members>
 		<members>NS_Sync_Request__c</members>
 		<members>SObject_Mapping__c</members>
-        <members>Connector_APP_Page</members>
+        <members>Home</members>
         <members>NS_Connector_Logs__c</members>
 		<name>CustomTab</name>
 	</types>

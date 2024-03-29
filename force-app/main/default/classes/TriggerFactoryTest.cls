@@ -1,8 +1,8 @@
 @isTest
 public class TriggerFactoryTest {
     
-    @IsTest
-    static void test1() {
+    @isTest
+    public static void test1() {
         
         NS_Sandboxes__c inst = new NS_Sandboxes__c();
         inst.Name = 'demo sandbox';
@@ -24,8 +24,5 @@ public class TriggerFactoryTest {
         acc.Toggle_Sync_to_NS__c = true;
         acc.Name = 'Test Account';
         insert acc;
-        
-        
-        
     }
 }

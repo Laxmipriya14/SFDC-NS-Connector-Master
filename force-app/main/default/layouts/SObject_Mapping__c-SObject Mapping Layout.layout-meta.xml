@@ -103,6 +103,9 @@
         <layoutColumns/>
         <style>CustomLinks</style>
     </layoutSections>
+    <platformActionList>
+        <actionListContext>Record</actionListContext>
+    </platformActionList>
     <relatedLists>
         <fields>NAME</fields>
         <relatedList>SObject_Mapping__c.Parent_SObject_Map__c</relatedList>

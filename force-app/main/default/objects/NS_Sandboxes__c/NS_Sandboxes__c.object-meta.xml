@@ -159,12 +159,12 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
-    <label>NS Instances</label>
+    <label>Instances</label>
     <nameField>
         <label>Name</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>NS Instances</pluralLabel>
+    <pluralLabel>Instances</pluralLabel>
     <searchLayouts>
         <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
         <excludedStandardButtons>NewFromDocument</excludedStandardButtons>

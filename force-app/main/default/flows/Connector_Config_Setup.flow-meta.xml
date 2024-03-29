@@ -176,19 +176,19 @@
         </connector>
         <fields>
             <name>ConnectorConfig</name>
-            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 20px;&quot;&gt;Connector Configurations&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 20px;&quot;&gt;Configurations&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
             <name>Copy_1_of_X3</name>
-            <fieldText>Activate / Deactivate Nesuite Connector</fieldText>
+            <fieldText>Activate / Deactivate Connector</fieldText>
             <fieldType>RegionContainer</fieldType>
             <fields>
                 <name>Copy_1_of_X3_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_EnableNSConnectorInfo</name>
-                    <fieldText>&lt;p&gt;Deactivate to stop syncing records to Nesuite Instance using &lt;strong&gt;Netsuite Connector&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Note &lt;/em&gt;&lt;/strong&gt;&lt;em&gt;: NS Sync Requests also will stop generating.&lt;/em&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;Deactivate to stop syncing records to Nesuite Instance.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Note &lt;/em&gt;&lt;/strong&gt;&lt;em&gt;: Sync Requests also will stop generating.&lt;/em&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
@@ -203,7 +203,7 @@
                 </fields>
                 <fields>
                     <name>Enable</name>
-                    <fieldText>&lt;ul&gt;&lt;li&gt;Activate to sync records to Netsuite using &lt;strong&gt;Netsuite Connector&lt;/strong&gt;.&lt;/li&gt;&lt;li&gt;Activate Netsuite Connector if&lt;ul&gt;&lt;li&gt;JSON mapping is added from &lt;strong&gt;JSON Mapping&lt;/strong&gt; navigation menu.&lt;/li&gt;&lt;li&gt;Netsuite Instances with scripts added from &lt;strong&gt;Netsuite Instance&lt;/strong&gt; navigation menu.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Active Netsuite Instance&lt;/strong&gt; is set in above setting.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</fieldText>
+                    <fieldText>&lt;ul&gt;&lt;li&gt;Activate to sync records to Netsuite.&lt;/li&gt;&lt;li&gt;Activate NetSuite Connector if&lt;ul&gt;&lt;li&gt;Object/Field mapping is added from &lt;strong&gt;Object/Field Mapping&lt;/strong&gt; navigation menu.&lt;/li&gt;&lt;li&gt;Instance with scripts added from &lt;strong&gt;Instances&lt;/strong&gt; navigation menu.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Active Instance&lt;/strong&gt; is set on Home page.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
@@ -254,7 +254,7 @@
         </fields>
         <fields>
             <name>Copy_1_of_X2</name>
-            <fieldText>Active Netsuite Instance</fieldText>
+            <fieldText>Active  Instance</fieldText>
             <fieldType>RegionContainer</fieldType>
             <fields>
                 <name>Copy_1_of_X2_Column1</name>
@@ -308,7 +308,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_Scheduledeletebatch</name>
-                    <fieldText>&lt;p&gt;Schedule batch to delete old &lt;strong&gt;Netsuite Sync Requests.&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;Schedule batch to delete old &lt;strong&gt;Sync Requests.&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>

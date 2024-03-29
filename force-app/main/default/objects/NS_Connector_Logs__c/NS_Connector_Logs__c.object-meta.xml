@@ -153,13 +153,13 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
-    <label>NS Connector Logs</label>
+    <label>Logs</label>
     <nameField>
         <displayFormat>Log - {000000}</displayFormat>
         <label>Name</label>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>NS Connector Logs</pluralLabel>
+    <pluralLabel>Logs</pluralLabel>
     <searchLayouts></searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
