@@ -95,7 +95,7 @@ public with sharing class NSSyncService {
                         contentVersionList.add( new ContentVersion (Title = 'Request.txt',PathOnClient ='Request.txt',VersionData = Blob.valueOf(request),FirstPublishLocationId = req.Id));
                     }
                     if(String.isNotBlank(response)){
-                        contentVersionList.add( new ContentVersion (Title = 'Request.txt',PathOnClient ='Request.txt', Body = Blob.valueOf(response),FirstPublishLocationId = req.Id));
+                        contentVersionList.add( new ContentVersion (Title = 'Request.txt',PathOnClient ='Request.txt', VersionData = Blob.valueOf(response),FirstPublishLocationId = req.Id));
                     }
                     req.Job_Status__c = jobInfo.Status;
                     req.NumberOfErrors__c = jobInfo.NumberOfErrors;
