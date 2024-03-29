@@ -2,7 +2,7 @@
  * @description       : Sigleton pattern class to provide connector configuration details which will be accessed using class property.
  * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
  * @group             : 
- * @last modified on  : 03-27-2024
+ * @last modified on  : 03-29-2024
  * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 **/
 public with sharing class ConnectorConfigurationsClass {

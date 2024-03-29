@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
  * @group             : 
- * @last modified on  : 03-27-2024
+ * @last modified on  : 03-29-2024
  * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 **/
 public with sharing class NSSyncService {
@@ -603,11 +603,15 @@ public with sharing class NSSyncService {
   
         ConnectorConfigurationsClass connectorConfig = ConnectorConfigurationsClass.getInstance();
         Connector_Configurations__c config = connectorConfig.config;
-        
-        NS_Sandboxes__c sandboxDet = [SELECT Id,End_Point_URL__c,Realm__c,Signature_Method__c,
+        NS_Sandboxes__c sandboxDet;
+        List<NS_Sandboxes__c> sandboxDetList = new List<NS_Sandboxes__c>();
+        sandboxDetList = [SELECT Id,End_Point_URL__c,Realm__c,Signature_Method__c,
         (SELECT Id,Object_Name__c,Script_URL__c FROM NS_Sync_Scripts__r WHERE Object_Name__c =: sObjectName)
         FROM NS_Sandboxes__c WHERE Id=: config.Netsuite_Instance__c Limit 1];
-
+        if(!sandboxDetList.isEmpty()){
+            sandboxDet = sandboxDetList.get(0);
+        }
+       
         String endpointURL = sandboxDet?.End_Point_URL__c + sandboxDet?.NS_Sync_Scripts__r?.Script_URL__c ;
          
 
