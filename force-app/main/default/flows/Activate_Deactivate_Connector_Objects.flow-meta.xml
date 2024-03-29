@@ -229,7 +229,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>ActiveObjectsInfo</name>
-                    <fieldText>&lt;p&gt;Select objects and submit to deactivate Netsuite Connector sync.&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;Select objects and submit to deactivate Connector sync.&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -272,7 +272,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>InactiveObjectsInfo</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Select objects and submit to activate Netsuite Connector sync.&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Select objects and submit to activate Connector sync.&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>

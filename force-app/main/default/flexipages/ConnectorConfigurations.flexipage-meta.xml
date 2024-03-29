@@ -13,7 +13,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
-                    <value>&lt;ul&gt;&lt;li&gt;At the time of&lt;strong&gt; initial setup&lt;/strong&gt; add &lt;strong&gt;object and field mapping configurations in Netsuite&lt;/strong&gt; and sync it to salesforce using &lt;strong&gt;Synchronize Salesforce&lt;/strong&gt; button in NS.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;After initial setup, manually &lt;/strong&gt;add new SObject / Field mapping in salesforce from JSON Mapping navigation menu. Note: Same mapping needs to be manually added in Netsuite also.&lt;/li&gt;&lt;/ul&gt;</value>
+                    <value>&lt;ul&gt;&lt;li&gt;At the time of&lt;strong&gt; initial setup&lt;/strong&gt; add &lt;strong&gt;object and field mapping configurations in Netsuite&lt;/strong&gt; and sync it to salesforce using &lt;strong&gt;Synchronize Salesforce&lt;/strong&gt; button in NS.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;After initial setup, manually &lt;/strong&gt;add new Object / Field mapping in salesforce from Object/Field Mapping navigation menu. Note: Same mapping needs to be manually added in Netsuite also.&lt;/li&gt;&lt;/ul&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
                 <identifier>flexipage_richText2</identifier>
@@ -31,7 +31,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
-                    <value>&lt;ul&gt;&lt;li&gt;Add netsuite connection details from NS Instances navigation menu.&lt;/li&gt;&lt;li&gt;You can add multiple NS Instances but only one can be active (selected on Connector Configuration page) at a time.&lt;/li&gt;&lt;li&gt;Add script URL for all the supporting objects from NS Scripts tab of the NS Instances details page in following format. &lt;/li&gt;&lt;/ul&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;strong&gt;?script=&amp;lt;script number in NS&amp;gt;&amp;amp;deploy=1&lt;/strong&gt;&lt;/p&gt;</value>
+                    <value>&lt;ul&gt;&lt;li&gt;Add netsuite connection details from Instances navigation menu.&lt;/li&gt;&lt;li&gt;You can add multiple Instances but only one can be active (selected on Home page) at a time.&lt;/li&gt;&lt;li&gt;Add script URL for all the supporting objects from NS Scripts tab of the Instance details page in following format.&lt;/li&gt;&lt;/ul&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;strong&gt;?script=&amp;lt;script number in NS&amp;gt;&amp;amp;deploy=1&lt;/strong&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
                 <identifier>flexipage_richText5</identifier>
@@ -49,7 +49,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
-                    <value>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Select NS Instance to integrate with the Salesforce Instance Connector App Page from &lt;strong&gt;Active Netsuite Instance&lt;/strong&gt; section.&lt;/li&gt;&lt;li&gt;From &lt;strong&gt;Activate / Deactivate Netsuite Connector &lt;/strong&gt;section toggle to activate the connector.&lt;/li&gt;&lt;li&gt;And finally submit to reflect changes in the system and sync Accouint/Contact/Order/Product records to Netsutie using NS Connector App.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</value>
+                    <value>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Select Instance to integrate with the Salesforce Instance on Home Page from &lt;strong&gt;Active Instance&lt;/strong&gt; section.&lt;/li&gt;&lt;li&gt;From &lt;strong&gt;Activate / Deactivate Connector &lt;/strong&gt;section toggle to activate the connector.&lt;/li&gt;&lt;li&gt;And finally submit to reflect changes in the system and sync Account/Contact/Order/Product records to NetSuite Instance.&lt;/li&gt;&lt;/ul&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
                 <identifier>flexipage_richText4</identifier>
@@ -67,7 +67,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
-                    <value>&lt;ul&gt;&lt;li&gt;Once all the setup is done and NS connector is active, last step is to toggle field &apos;&lt;span style=&quot;color: rgb(24, 24, 24);&quot;&gt;Toggle_Sync_to_NS__c&lt;/span&gt;&apos; from code or flows as per your condition.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;E.g. Sync Account when deal is at &apos;Technical Win&apos; stage. So pseudo code would be&lt;/p&gt;&lt;p&gt;If Opportunity.StageName isChanged = true &amp;amp;&amp;amp; &lt;span style=&quot;color: rgb(116, 116, 116);&quot;&gt;Opportunity.StageName = &apos;Technical Win&apos;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;then &lt;span style=&quot;color: rgb(24, 24, 24);&quot;&gt;Toggle_Sync_to_NS__c = Not(Toggle_Sync_to_NS__c) //This will give true for false / false for true value of Toggle_Sync_to_NS__c&lt;/span&gt;&lt;/p&gt;</value>
+                    <value>&lt;ul&gt;&lt;li&gt;Once all the setup is done and connector is active, last step is to toggle field &apos;&lt;span style=&quot;color: rgb(24, 24, 24);&quot;&gt;Toggle_Sync_to_NS__c&lt;/span&gt;&apos; from code or flows as per your condition.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;E.g. Sync Account when deal is at &apos;Technical Win&apos; stage. So pseudo code would be&lt;/p&gt;&lt;p&gt;If Opportunity.StageName isChanged = true &amp;amp;&amp;amp; &lt;span style=&quot;color: rgb(116, 116, 116);&quot;&gt;Opportunity.StageName = &apos;Technical Win&apos;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;then &lt;span style=&quot;color: rgb(24, 24, 24);&quot;&gt;Toggle_Sync_to_NS__c = Not(Toggle_Sync_to_NS__c) //This will give true for false / false for true value of Toggle_Sync_to_NS__c&lt;/span&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
                 <identifier>flexipage_richText6</identifier>
@@ -85,7 +85,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Configure JSON Mapping</value>
+                    <value>Configure Object/Field Mapping</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>name</name>
@@ -103,7 +103,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Configure NS Instances</value>
+                    <value>Configure Instances</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>name</name>
@@ -121,7 +121,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Activate NS Connector</value>
+                    <value>Activate Connector</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>name</name>
@@ -139,7 +139,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Specify Triggering Point (Declaratively / Programmatically)</value>
+                    <value>Record Filter</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>name</name>
@@ -161,7 +161,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
-                    <value>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 20px;&quot;&gt;NS Connector Setup Guide&lt;/strong&gt;&lt;/p&gt;</value>
+                    <value>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 20px;&quot;&gt;Setup Guide&lt;/strong&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
                 <identifier>flexipage_richText3</identifier>

@@ -60,14 +60,14 @@ public with sharing class TriggerFactory {
                 when BEFORE_DELETE {
                     service.beforeDelete();
                 }
-                when AFTER_INSERT {
-                    service.afterInsert();
-                }
                 when AFTER_UPDATE{
                     service.afterUpdate();
                 }
                 when AFTER_DELETE {
                     service.afterDelete();
+                }
+                when AFTER_INSERT {
+                    service.afterInsert();
                 }
                 when else {
                     service.afterUndelete();

@@ -153,12 +153,12 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
-    <label>JSON Mapping</label>
+    <label>Object/Field Mapping</label>
     <nameField>
         <label>SObject Name</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>JSON Mapping</pluralLabel>
+    <pluralLabel>Object/Field Mapping</pluralLabel>
     <profileSearchLayouts>
         <fields>NAME</fields>
         <fields>JSON_Sobject_Name__c</fields>
