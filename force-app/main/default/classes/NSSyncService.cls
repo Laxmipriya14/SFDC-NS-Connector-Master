@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
  * @group             : 
- * @last modified on  : 03-27-2024
+ * @last modified on  : 03-29-2024
  * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 **/
 public with sharing class NSSyncService {
@@ -75,7 +75,7 @@ public with sharing class NSSyncService {
         
        
             List<NS_Sync_Request__c> updateReqList = new List<NS_Sync_Request__c>();
-            List<Attachment> attachmentList = new List<Attachment>();
+            List<ContentVersion> contentVersionList = new List<ContentVersion>();
             Set<Id> sobjectIdlist = new Set<Id>();
             List<SObject> sobjectlist = new List<SObject>();
             String objName;  
@@ -92,10 +92,10 @@ public with sharing class NSSyncService {
                         sobjectIdlist.add(req.Source_Record_Id__c);
                     }
                     if(String.isNotBlank(request)){
-                        attachmentList.add( new Attachment(Name = 'Request.txt', Body = Blob.valueOf(request),ParentId = req.Id));
+                        contentVersionList.add( new ContentVersion (Title = 'Request.txt',PathOnClient ='Request.txt',VersionData = Blob.valueOf(request),FirstPublishLocationId = req.Id));
                     }
                     if(String.isNotBlank(response)){
-                        attachmentList.add( new Attachment(Name = 'Response.txt', Body = Blob.valueOf(response),ParentId = req.Id));
+                        contentVersionList.add( new ContentVersion (Title = 'Request.txt',PathOnClient ='Request.txt', Body = Blob.valueOf(response),FirstPublishLocationId = req.Id));
                     }
                     req.Job_Status__c = jobInfo.Status;
                     req.NumberOfErrors__c = jobInfo.NumberOfErrors;
@@ -108,7 +108,7 @@ public with sharing class NSSyncService {
                     updateReqList.add(req);
                 }
                 update updateReqList;
-                insert attachmentList;
+                insert contentVersionList;
                 if(!sobjectIdlist.isEmpty() && String.isNotBlank(objName)){
                     String query = 'SELECT id,Netsuite_Sync_Status__c FROM ' + objName + ' WHERE id In: sobjectIdlist'; 
                     for(SObject obj : Database.query(query)){
