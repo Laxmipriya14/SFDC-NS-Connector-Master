@@ -191,6 +191,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>NS_Sync_Request__c.Parent_Account_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>NS_Sync_Request__c.Source_Object_Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -256,6 +261,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>SObject_Mapping__c.Parent_Account_Lookup_Field__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>SObject_Mapping__c.Parent_SObject_Map__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -267,6 +277,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>SObject_Mapping__c.Relationship_with_parent__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>SObject_Mapping__c.Sync_Parent_Account__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>

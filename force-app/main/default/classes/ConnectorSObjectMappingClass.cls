@@ -33,7 +33,7 @@ public with sharing class ConnectorSObjectMappingClass {
     * @param objname 
     **/
     public void getSObjectMapping(String objname){
-        List<SObject_Mapping__c> sobjMappingList = new List<SObject_Mapping__c>([SELECT id,IsActive__c FROM SObject_Mapping__c WHERE Name=:objname order by createddate Asc Limit 1]);
+        List<SObject_Mapping__c> sobjMappingList = new List<SObject_Mapping__c>([SELECT id,IsActive__c,Sync_Parent_Account__c,Parent_Account_Lookup_Field__c FROM SObject_Mapping__c WHERE Name=:objname order by createddate Asc Limit 1]);
         if(!sobjMappingList.isEmpty()){
             sobjMapping = sobjMappingList.get(0);
         }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parent_Account_Lookup_Mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(Sync_Parent_Account__c, ISBLANK( Parent_Account_Lookup_Field__c) )</errorConditionFormula>
+    <errorMessage>This field is mandatory to lookup Parent Account.</errorMessage>
+</ValidationRule>

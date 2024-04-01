@@ -56,6 +56,37 @@ public with sharing class NSSyncService {
 		return Database.query(query);        
     }
 
+    public static Map<Id,Account> getParentAccount(List<NS_Sync_Request__c> syncRecList,String sourceobjectName,List<Field_Mapping__c> fieldMappingList){
+        String query = '';
+        List<String> sourceObjfieldList = new List<String>();
+        Map<Id,Id> sourceParentIdMap = new Map<Id,Id>();
+        Map<Id,Account> parentRecMap = new Map<Id,Account>();
+        Map<Id,Account> sourceParentRecMap = new Map<Id,Account>();
+
+        NSSyncRequestBatchService batchService = new NSSyncRequestBatchService();
+
+        for(NS_Sync_Request__c syncReq : syncRecList){
+            sourceParentIdMap.put(syncReq.Source_Record_Id__c,syncReq.Parent_Account_Id__c);
+        }
+
+        sourceObjfieldList = batchService.getSourceObjFields(sourceobjectName);
+        query = batchService.getSourceObjQuery(sourceObjfieldList,sourceobjectName,sourceParentIdMap.values());
+        
+        for(Account acc : Database.query(query)){
+            parentRecMap.put(acc.Id,acc);
+        }
+        if(!parentRecMap.isEmpty()){
+            for(Id sourceId : sourceParentIdMap.keySet()){
+                Id accId = sourceParentIdMap.get(sourceId);
+                if(parentRecMap.containsKey(accId)){
+                    sourceParentRecMap.put(sourceId,parentRecMap.get(accId));
+                }  
+            }
+        }
+        
+		return sourceParentRecMap;        
+    }
+
     /**
     * @description 
     * @author ChangeMeIn@UserSettingsUnder.SFDoc | 03-14-2024 
@@ -142,8 +173,11 @@ public with sharing class NSSyncService {
         avoidRecurssion = true;
         parentObject = SobjectAPIName;
         List<SObject> lstSobject = new List<SObject>();
+        Map<Id,Account> sourceAccMap = new Map<Id,Account>();
+        sourceAccMap = getParentAccount(syncRecList,'Account');    
         lstSobject = getSourceRecords(syncRecList,SobjectAPIName);
-        lstParentMappings =           [SELECT Id, Name,
+
+        lstParentMappings =      [SELECT Id, Name,
                                            Relationship_Type__c,
                                            JSON_Sobject_Name__c,
                                            Parent_SObject_Map__c,
@@ -199,7 +233,9 @@ public with sharing class NSSyncService {
             Map<String,List<SyncChild>> tempMap = new Map<String,List<SyncChild>>();
             p.record = pr;
             P.Mapping = recordMappingDetails.get(String.valueOf(pr.get('Id')));
-        
+            if(!sourceAccMap.isEmpty()){
+                p.
+            }
             if( !parentChildMap.isEmpty() && parentChildMap.containsKey(String.valueOf(pr.get('Id'))))
             {
                 for(String childObjectName : parentChildMap.get(String.valueOf(pr.get('Id'))).keyset())

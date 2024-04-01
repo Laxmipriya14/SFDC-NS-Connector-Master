@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
  * @group             : 
- * @last modified on  : 03-18-2024
+ * @last modified on  : 03-29-2024
  * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 **/
 public with sharing class TriggerServiceHandler {
@@ -15,14 +15,21 @@ public with sharing class TriggerServiceHandler {
     * @return NS_Sync_Request__c 
     **/
     public NS_Sync_Request__c initNSSyncRequest(SObject sourceRec){
+       
         Id sourceRecId = (Id)sourceRec.get('Id');
         String sourceRecordType = String.valueOf(sourceRec.getSObjectType());
         String sourceRecName = String.valueOf(sourceRec.get('Name'));
+        String parentAccountId = '';
+        ConnectorSObjectMappingClass mapping = ConnectorSObjectMappingClass.getInstance(sourceRecName);
+        if(mapping.sobjMapping.Sync_Parent_Account__c && String.isNotBlank(mapping.sobjMapping.Parent_Account_Lookup_Field__c)){
+                parentAccountId = String.valueOf(sourceRec.get(mapping.sobjMapping.Parent_Account_Lookup_Field__c));
+        }
 
         return new NS_Sync_Request__c(
             Source_Record_Id__c = sourceRecId, 
             Source_Object_Type__c = sourceRecordType,
-            Sync_Status__c = 'Queued'
+            Sync_Status__c = 'Queued',
+            Parent_Account_Id__c = parentAccountId
             );
     }
 
