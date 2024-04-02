@@ -2,11 +2,18 @@
   "packageDirectories": [
     {
       "path": "force-app",
-      "default": true
+      "default": true,
+      "package": "Yantra's NetSuite Connector",
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "versionDescription": ""
     }
   ],
   "name": "SFDC-NS-Connector-Metadata",
-  "namespace": "",
+  "namespace": "Yantra",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "59.0"
+  "sourceApiVersion": "59.0",
+  "packageAliases": {
+    "Yantra's NetSuite Connector": "0Hoal0000000JCLCA2"
+  }
 }
