@@ -2,7 +2,7 @@
 * @description       : 
 * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
 * @group             : 
-* @last modified on  : 03-07-2024
+* @last modified on  : 04-02-2024
 * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 **/
 public class EnableDisableDeleteNSRequestBatchJob {
@@ -36,7 +36,6 @@ public class EnableDisableDeleteNSRequestBatchJob {
         catch (Exception e) {
             // Catch any exceptions and handle them
             output.errorMessage = ('An error occurred: ' + e.getMessage());
-            system.debug('errorMessage:'+e.getMessage());
             e.setMessage(e.getMessage());
             throw e;
             

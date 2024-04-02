@@ -2,7 +2,7 @@
 * @description       : 
 * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
 * @group             : 
-* @last modified on  : 03-07-2024
+* @last modified on  : 04-02-2024
 * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 **/
 public class DeleteNetsuiteSyncRequests implements Database.Batchable<sObject>, Schedulable {
@@ -19,16 +19,13 @@ public class DeleteNetsuiteSyncRequests implements Database.Batchable<sObject>, 
             }else{
                 currentDt = currentDt.addDays(-15);
             }
-            system.debug('currentDt:'+currentDt);
         }
         String query = 'SELECT Id, (SELECT Id From Attachments) FROM NS_Sync_Request__c WHERE CreatedDate < :currentDt';
-        system.debug('query:'+query);
         return Database.getQueryLocator(query);
     }
     
     public void execute(Database.BatchableContext context, List<NS_Sync_Request__c> scope) {
         // Delete the NS Sync Request records in the current batch
-        system.debug('scope:'+scope);
         delete scope;
     }
     

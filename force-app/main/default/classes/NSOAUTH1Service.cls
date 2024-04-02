@@ -3,7 +3,7 @@
  *                      parameters : realm,consumer key,token,signature method,timestamp,nonce,version,signature      
  * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
  * @group             : 
- * @last modified on  : 03-18-2024
+ * @last modified on  : 04-02-2024
  * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 **/
 public without sharing class NSOAUTH1Service {
@@ -24,7 +24,6 @@ public without sharing class NSOAUTH1Service {
     **/
     public void setOAUTH1Authorization(HttpRequest httpReq){
         Oauth1Wrapper configDetails = new Oauth1Wrapper(this.sandboxDet);
-        System.debug('configDetails ===>' + configDetails);
         String signature = getSignature(configDetails);
         String authHeader = getAuthHeader(configDetails,signature);
         httpReq.setHeader('Authorization',authHeader);

@@ -20,13 +20,11 @@
 		<members>DeleteNetsuiteSyncRequests</members>
 		<members>EnableDisableDeleteNSRequestBatchJob</members>
 		<members>NSSyncRequestBatchService</members>
-		<members>ConnectorConfigurationsClassTest</members>
 		<members>NSSyncRequestBatchSchedulerTest</members>
-		<members>NetsuiteAccountTriggerTest</members>
-		<members>NetsuiteContactTriggerTest</members>
-		<members>NetSuiteProductTriggerTest</members>
-		<members>NSSyncRequestTriggerTest</members>
-		<members>TriggerFactoryTest</members>
+		<members>NSSyncRequestTestClass</members>		
+		<members>NSSyncQuickActionHandlerTest</members>
+		<members>DeleteNetsuiteSyncRequestsTest</members>
+		<members>EnableDisableDeleteNSRequestBatchJobTest</members>
 		<name>ApexClass</name>
 	</types>
 	<types>

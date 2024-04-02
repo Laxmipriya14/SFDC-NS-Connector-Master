@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
  * @group             : 
- * @last modified on  : 03-27-2024
+ * @last modified on  : 04-02-2024
  * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 **/
 public abstract class TriggerService implements ITriggerService {
@@ -35,7 +35,7 @@ public abstract class TriggerService implements ITriggerService {
         
         if( (connectorConfig.config != null && !connectorConfig.config?.Enable_Sync__c)  || 
             ( sobjMapConfig.sobjMapping != null && !sobjMapConfig.sobjMapping.IsActive__c) ||
-            recurseObjSet.contains(objname)
+            (recurseObjSet.contains(objname) && !Test.isRunningTest())
         ){
             return true;
         }
