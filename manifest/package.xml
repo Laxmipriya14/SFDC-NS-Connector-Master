@@ -25,6 +25,7 @@
 		<members>NSSyncQuickActionHandlerTest</members>
 		<members>DeleteNetsuiteSyncRequestsTest</members>
 		<members>EnableDisableDeleteNSRequestBatchJobTest</members>
+		<members>GenerateSObjectFieldMapping</members>
 		<name>ApexClass</name>
 	</types>
 	<types>
@@ -71,6 +72,41 @@
 		<members>NSConnectorTriggerConfig.Opportunity</members>
 		<members>NSConnectorTriggerConfig.OpportunityLineItem</members>
 		<members>NSConnectorTriggerConfig.Product2</members>
+		<members>Field_Mappings.AccountId2</members>
+		<members>Field_Mappings.AccountId3</members>
+		<members>Field_Mappings.Amount</members>
+		<members>Field_Mappings.Billing_Address_Custom_c</members>
+		<members>Field_Mappings.Description</members>
+		<members>Field_Mappings.Email</members>
+		<members>Field_Mappings.FirstName</members>
+		<members>Field_Mappings.Id</members>
+		<members>Field_Mappings.Id2</members>
+		<members>Field_Mappings.Id3</members>
+		<members>Field_Mappings.Id4</members>
+		<members>Field_Mappings.Id5</members>
+		<members>Field_Mappings.LastName</members>
+		<members>Field_Mappings.Name</members>
+		<members>Field_Mappings.Name2</members>
+		<members>Field_Mappings.Name3</members>
+		<members>Field_Mappings.Name5</members>
+		<members>Field_Mappings.NetsuitIdc5</members>
+		<members>Field_Mappings.NetsuiteId5</members>
+		<members>Field_Mappings.Netsuite_Id_c</members>
+		<members>Field_Mappings.Netsuite_Id_c2</members>
+		<members>Field_Mappings.Phone</members>
+		<members>Field_Mappings.Phone2</members>
+		<members>Field_Mappings.Product2Id</members>
+		<members>Field_Mappings.ProductCode</members>
+		<members>Field_Mappings.Quantity</members>
+		<members>Field_Mappings.QuantityUnitOfMeasure</members>
+		<members>Field_Mappings.Shipping_Address_Custom_c</members>
+		<members>Field_Mappings.UnitPrice</members>
+		<members>Field_Mappings.Website</members>
+		<members>Object_Mapping.Account</members>
+		<members>Object_Mapping.Contact</members>
+		<members>Object_Mapping.Opportunity</members>
+		<members>Object_Mapping.OpportunityLineItem</members>
+		<members>Object_Mapping.Product2</members>
 		<name>CustomMetadata</name>
 	</types>
 	<types>
@@ -78,6 +114,8 @@
 		<members>Field_Mapping__c</members>
 		<members>NSConnectorOauth1Config__c</members>
 		<members>NSConnectorTriggerConfig__mdt</members>
+		<members>Object_Mapping__mdt</members>
+		<members>Field_Mappings__mdt</members>
 		<members>NS_Connector_Logs__c</members>
 		<members>NS_Sandboxes__c</members>
 		<members>NS_Scripts__c</members>
@@ -124,6 +162,8 @@
 		<members>NS_Scripts__c-NS Sync Scripts Layout</members>
 		<members>NS_Sync_Request__c-NS Sync Request Layout</members>
 		<members>SObject_Mapping__c-SObject Mapping Layout</members>
+		<members>Field_Mappings__mdt-Field Mapping Layout</members>
+		<members>Object_Mapping__mdt-Object%2FField Mapping Layout</members>
 		<name>Layout</name>
 	</types>
 	<version>59.0</version>
