@@ -20,12 +20,13 @@
 		<members>DeleteNetsuiteSyncRequests</members>
 		<members>EnableDisableDeleteNSRequestBatchJob</members>
 		<members>NSSyncRequestBatchService</members>
+		<members>GenerateSObjectFieldMapping</members>
 		<members>NSSyncRequestBatchSchedulerTest</members>
 		<members>NSSyncRequestTestClass</members>		
 		<members>NSSyncQuickActionHandlerTest</members>
 		<members>DeleteNetsuiteSyncRequestsTest</members>
 		<members>EnableDisableDeleteNSRequestBatchJobTest</members>
-		<members>GenerateSObjectFieldMapping</members>
+		<members>GenerateSObjectFieldMappingTest</members>
 		<name>ApexClass</name>
 	</types>
 	<types>
