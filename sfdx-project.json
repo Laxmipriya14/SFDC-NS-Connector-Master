@@ -4,12 +4,15 @@
       "path": "force-app",
       "default": true,
       "package": "Yantra's NetSuite Connector",
-      "versionName": "ver 0.1",
-      "versionNumber": "0.1.0.NEXT",
-      "versionDescription": ""
+      "versionName": "Summer 2024",
+      "versionNumber": "1.0.0.NEXT",
+      "versionDescription": "Summer 2024 Release",
+      "postInstallUrl": "https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm",
+      "releaseNotesUrl": "https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm"
+
     }
   ],
-  "name": "SFDC-NS-Connector-Metadata",
+  "name": "Yantra-s-NetSuite-Connector",
   "namespace": "Yantra",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "59.0",
