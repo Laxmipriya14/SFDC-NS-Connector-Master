@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Create_Object_Field_Mapping</name>
+        <label>Create Object/Field Mapping</label>
+        <locationX>50</locationX>
+        <locationY>566</locationY>
+        <actionName>GenerateSObjectFieldMapping</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Copy_1_of_Connector_Configuration</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Log_Error</targetReference>
+        </faultConnector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <nameSegment>GenerateSObjectFieldMapping</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
     <apiVersion>60.0</apiVersion>
     <assignments>
         <name>Assignment_1</name>
         <label>Assignment 1</label>
         <locationX>50</locationX>
-        <locationY>566</locationY>
+        <locationY>1022</locationY>
         <assignmentItems>
             <assignToReference>Get_Connector_Configurations.Enable_Sync__c</assignToReference>
             <operator>Assign</operator>
@@ -34,8 +52,8 @@
     <decisions>
         <name>Connector_Config_Available</name>
         <label>Connector Config Available?</label>
-        <locationX>182</locationX>
-        <locationY>458</locationY>
+        <locationX>314</locationX>
+        <locationY>914</locationY>
         <defaultConnector>
             <targetReference>Create_Connector_Configuration</targetReference>
         </defaultConnector>
@@ -54,6 +72,31 @@
                 <targetReference>Assignment_1</targetReference>
             </connector>
             <label>Configuration Available</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>SObject_Mapping_Available</name>
+        <label>SObject Mapping Available ?</label>
+        <locationX>314</locationX>
+        <locationY>458</locationY>
+        <defaultConnector>
+            <targetReference>Copy_1_of_Connector_Configuration</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Not_Available</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_SObject_Mappings</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Object_Field_Mapping</targetReference>
+            </connector>
+            <label>Not Available</label>
         </rules>
     </decisions>
     <dynamicChoiceSets>
@@ -99,10 +142,10 @@
     <recordCreates>
         <name>Create_Connector_Configuration</name>
         <label>Create Connector Configuration</label>
-        <locationX>314</locationX>
-        <locationY>566</locationY>
+        <locationX>578</locationX>
+        <locationY>1022</locationY>
         <faultConnector>
-            <targetReference>Fault_error</targetReference>
+            <targetReference>Log_Error</targetReference>
         </faultConnector>
         <inputAssignments>
             <field>Enable_Sync__c</field>
@@ -125,10 +168,36 @@
         <object>Connector_Configurations__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
+    <recordCreates>
+        <name>Log_Error</name>
+        <label>Log Error</label>
+        <locationX>842</locationX>
+        <locationY>1130</locationY>
+        <inputAssignments>
+            <field>Component_Name__c</field>
+            <value>
+                <stringValue>Connector Config Setup</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Error_Message__c</field>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Logging_Level__c</field>
+            <value>
+                <stringValue>ERROR</stringValue>
+            </value>
+        </inputAssignments>
+        <object>NS_Connector_Logs__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
     <recordLookups>
         <name>Get_Connector_Configurations</name>
         <label>Get Connector Configurations</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -143,11 +212,11 @@
     <recordLookups>
         <name>Get_NS_Instances</name>
         <label>Get NS Instances</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Copy_1_of_Connector_Configuration</targetReference>
+            <targetReference>Get_SObject_Mappings</targetReference>
         </connector>
         <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>NS_Sandboxes__c</object>
@@ -155,19 +224,36 @@
         <sortOrder>Asc</sortOrder>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>Get_SObject_Mappings</name>
+        <label>Get SObject Mappings</label>
+        <locationX>314</locationX>
+        <locationY>350</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>SObject_Mapping_Available</targetReference>
+        </connector>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>SObject_Mapping__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Update_Connector_Configuration</name>
         <label>Update Connector Configuration</label>
         <locationX>50</locationX>
-        <locationY>674</locationY>
+        <locationY>1130</locationY>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Log_Error</targetReference>
+        </faultConnector>
         <inputReference>Get_Connector_Configurations</inputReference>
     </recordUpdates>
-    <runInMode>SystemModeWithoutSharing</runInMode>
+    <runInMode>SystemModeWithSharing</runInMode>
     <screens>
         <name>Copy_1_of_Connector_Configuration</name>
         <label>Existing Connector Configuration</label>
-        <locationX>182</locationX>
-        <locationY>350</locationY>
+        <locationX>314</locationX>
+        <locationY>806</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -408,24 +494,8 @@
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
-    <screens>
-        <name>Fault_error</name>
-        <label>Fault error</label>
-        <locationX>578</locationX>
-        <locationY>674</locationY>
-        <allowBack>false</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <fields>
-            <name>FaultMessage</name>
-            <fieldText>&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!EnableConfig}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>false</showHeader>
-    </screens>
     <start>
-        <locationX>56</locationX>
+        <locationX>188</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Connector_Configurations</targetReference>
@@ -448,6 +518,22 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ObjectMapping</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>SObject_Mapping__c</objectType>
+    </variables>
+    <variables>
+        <name>ObjectMappingList</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>SObject_Mapping__c</objectType>
     </variables>
     <variables>
         <name>SetInstanceChoice</name>

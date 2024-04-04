@@ -169,6 +169,32 @@
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
+    <recordCreates>
+        <name>Log_Error</name>
+        <label>Log Error</label>
+        <locationX>440</locationX>
+        <locationY>950</locationY>
+        <inputAssignments>
+            <field>Component_Name__c</field>
+            <value>
+                <stringValue>Activate/Deactivate Connector Objects</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Error_Message__c</field>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Logging_Level__c</field>
+            <value>
+                <stringValue>ERROR</stringValue>
+            </value>
+        </inputAssignments>
+        <object>NS_Connector_Logs__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
     <recordLookups>
         <name>Get_SObject_Records</name>
         <label>Get SObject Records</label>
@@ -188,27 +214,11 @@
         <locationX>176</locationX>
         <locationY>842</locationY>
         <faultConnector>
-            <targetReference>Error</targetReference>
+            <targetReference>Log_Error</targetReference>
         </faultConnector>
         <inputReference>UpdateDMLList</inputReference>
     </recordUpdates>
     <runInMode>SystemModeWithoutSharing</runInMode>
-    <screens>
-        <name>Error</name>
-        <label>Error</label>
-        <locationX>440</locationX>
-        <locationY>950</locationY>
-        <allowBack>true</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
-        <fields>
-            <name>adfadsa</name>
-            <fieldText>&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
-    </screens>
     <screens>
         <name>ToggleConfigObjects</name>
         <label>ToggleConfigObjects</label>

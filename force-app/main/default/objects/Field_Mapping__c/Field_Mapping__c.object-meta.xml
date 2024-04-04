@@ -161,11 +161,6 @@
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Field Mappings</pluralLabel>
-    <!--<profileSearchLayouts>
-        <fields>NAME</fields>
-        <fields>IsActive__c</fields>
-        <profileName>System Administrator</profileName>
-    </profileSearchLayouts>-->
     <searchLayouts></searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>

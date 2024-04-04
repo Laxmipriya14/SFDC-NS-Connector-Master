@@ -185,7 +185,8 @@ public with sharing class NSSyncService {
                 relationshipType = mapping.Relationship_Type__c;
             }
         }
-
+        System.debug('parentSobjectMappingIds ===>' + parentSobjectMappingIds);
+        System.debug('parentRecords ===>' + parentRecords.keyset());
         getChildRecords(parentSobjectMappingIds, parentRecords.keyset());
 
         //recordMappingDetails : record Id -> object mapping

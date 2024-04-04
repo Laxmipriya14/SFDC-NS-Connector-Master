@@ -13,7 +13,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>richTextValue</name>
-                    <value>&lt;ul&gt;&lt;li&gt;At the time of&lt;strong&gt; initial setup&lt;/strong&gt; add &lt;strong&gt;object and field mapping configurations in Netsuite&lt;/strong&gt; and sync it to salesforce using &lt;strong&gt;Synchronize Salesforce&lt;/strong&gt; button in NS.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;After initial setup, manually &lt;/strong&gt;add new Object / Field mapping in salesforce from Object/Field Mapping navigation menu. Note: Same mapping needs to be manually added in Netsuite also.&lt;/li&gt;&lt;/ul&gt;</value>
+                    <value>&lt;ul&gt;&lt;li&gt;Post installation of the package Object/ Field mapping will be available automatically. Verify in Object/ Field mapping navigation menu of the application.&lt;/li&gt;&lt;li&gt;You can add additional Object/Field mapping manually&lt;strong&gt; &lt;/strong&gt;in salesforce from Object/Field Mapping navigation menu.&lt;strong&gt;&lt;em&gt; Note: Same mapping needs to be manually added in NetSuite also.&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:richText</componentName>
                 <identifier>flexipage_richText2</identifier>
