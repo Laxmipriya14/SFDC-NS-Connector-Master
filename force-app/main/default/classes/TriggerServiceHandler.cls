@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
  * @group             : 
- * @last modified on  : 03-18-2024
+ * @last modified on  : 04-05-2024
  * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 **/
 public with sharing class TriggerServiceHandler {
@@ -18,11 +18,12 @@ public with sharing class TriggerServiceHandler {
         Id sourceRecId = (Id)sourceRec.get('Id');
         String sourceRecordType = String.valueOf(sourceRec.getSObjectType());
         String sourceRecName = String.valueOf(sourceRec.get('Name'));
-
+        String sourceRecURL =  System.URL.getOrgDomainUrl().toExternalForm() + '/' + sourceRecId;
         return new NS_Sync_Request__c(
             Source_Record_Id__c = sourceRecId, 
             Source_Object_Type__c = sourceRecordType,
-            Sync_Status__c = 'Queued'
+            Sync_Status__c = 'Queued',
+            Source_Object_Link__c = sourceRecURL
             );
     }
 

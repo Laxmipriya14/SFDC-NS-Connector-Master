@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
  * @group             : 
- * @last modified on  : 03-13-2024
+ * @last modified on  : 04-05-2024
  * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 **/
 public with sharing class NSTriggerServiceImpl extends TriggerService{
@@ -88,10 +88,7 @@ public with sharing class NSTriggerServiceImpl extends TriggerService{
         {   
             //Store old account details for update id in oldAcc variable 
             SObject oldRec = Trigger.oldMap.get(newRec.Id);
-            System.debug('Opportunity Name ==>' + newRec.get('name'));
-            System.debug('Opportunity stage ==>' + newRec.get('StageName'));
-            System.debug('new toggle ==>' + newRec.get('Toggle_Sync_to_NS__c'));
-             System.debug('old toggle ==>' + oldRec.get('Toggle_Sync_to_NS__c'));
+           
             //Toggle sync to NS check - start
             //In before save of record to the database Toggle_Sync_to_NS__c field is toggled due to the required condition is met to sync record to netsuite
             if(newRec.get('Toggle_Sync_to_NS__c') != oldRec.get('Toggle_Sync_to_NS__c')){

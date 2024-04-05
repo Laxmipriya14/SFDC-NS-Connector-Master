@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
  * @group             : 
- * @last modified on  : 03-29-2024
+ * @last modified on  : 04-05-2024
  * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 **/
 public with sharing class NSSyncService {
@@ -185,8 +185,6 @@ public with sharing class NSSyncService {
                 relationshipType = mapping.Relationship_Type__c;
             }
         }
-        System.debug('parentSobjectMappingIds ===>' + parentSobjectMappingIds);
-        System.debug('parentRecords ===>' + parentRecords.keyset());
         getChildRecords(parentSobjectMappingIds, parentRecords.keyset());
 
         //recordMappingDetails : record Id -> object mapping

@@ -3,7 +3,7 @@
  *                      The advantage of using this factory pattern is that it delegates the creation of an object to another class and provides a good level of abstraction.
  * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
  * @group             : 
- * @last modified on  : 03-18-2024
+ * @last modified on  : 04-05-2024
  * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 **/
 public with sharing class TriggerFactory {
@@ -16,7 +16,6 @@ public with sharing class TriggerFactory {
     * @return TriggerService 
     **/
     public TriggerService getTriggerServiceInstance(String objName){
-        system.debug('objName = '+objName);
         String className = '';
         TriggerService service;
         className = getClassName(objName);
