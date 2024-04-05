@@ -53,6 +53,8 @@
 		<members>Account.NS_Sync_Error__c</members>
 		<members>Account.Netsuite_ID__c</members>
 		<members>Account.Toggle_Sync_to_NS__c</members>
+		<members>Account.Billing_Address_Custom__c</members>
+		<members>Account.Shipping_Address_Custom__c</members>
 		<members>Contact.NS_Sync_Error__c</members>
 		<members>Contact.Netsuite_Id__c</members>
 		<members>Contact.Toggle_Sync_to_NS__c</members>

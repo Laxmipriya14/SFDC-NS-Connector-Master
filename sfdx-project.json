@@ -2,13 +2,11 @@
   "packageDirectories": [
     {
       "path": "force-app",
-      "default": true,
       "package": "Yantra's NetSuite Connector",
       "versionName": "Summer 2024",
       "versionNumber": "1.0.0.NEXT",
-      "versionDescription": "Summer 2024 Release",
-      "postInstallUrl": "",
-      "releaseNotesUrl": ""
+      "default": true,
+      "versionDescription": "Summer 2024 Release"
     }
   ],
   "name": "Yantra-s-NetSuite-Connector",
@@ -16,8 +14,9 @@
   "sfdcLoginUrl": "https://login.salesforce.com, https://test.salesforce.com",
   "sourceApiVersion": "59.0",
   "packageAliases": {
-    "Yantra's NetSuite Connector": "0Hoal0000000JCLCA2",
-    "Yantra's NetSuite Connector@1.0.0-1": "04tal000000GjZ3AAK",
-    "Yantra's NetSuite Connector@1.0.0-2": "04tal000000Guz7AAC"
+    "Yantra's NetSuite Connector": "0Hoal0000000JibCAE",
+    "Yantra's NetSuite Connector@0.1.0-1": "04tal000000H1CbAAK",
+    "Yantra's NetSuite Connector@1.0.0-1": "04tal000000H1cPAAS",
+    "Yantra's NetSuite Connector@1.0.0-2": "04tal000000H2BtAAK"
   }
 }

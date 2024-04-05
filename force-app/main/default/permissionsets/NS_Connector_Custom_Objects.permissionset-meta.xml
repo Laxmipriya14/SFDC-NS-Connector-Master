@@ -226,11 +226,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>NS_Sync_Request__c.Source_Object_URL__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>NS_Sync_Request__c.Source_Record_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
