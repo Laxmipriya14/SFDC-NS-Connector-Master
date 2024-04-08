@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
  * @group             : 
- * @last modified on  : 04-05-2024
+ * @last modified on  : 04-08-2024
  * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 **/
 public with sharing class TriggerServiceHandler {
@@ -23,7 +23,8 @@ public with sharing class TriggerServiceHandler {
             Source_Record_Id__c = sourceRecId, 
             Source_Object_Type__c = sourceRecordType,
             Sync_Status__c = 'Queued',
-            Source_Object_Link__c = sourceRecURL
+            Source_Object_Link__c = sourceRecURL,
+            Source_Record_Name__c = sourceRecName
             );
     }
 
