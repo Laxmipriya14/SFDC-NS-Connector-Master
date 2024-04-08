@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <types>
+	<types>
 		<members>ConnectorConfigurationsClass</members>
 		<members>ConnectorSObjectMappingClass</members>
 		<members>CustomNSSyncRequestIterable</members>
 		<members>CustomNSSyncRequestIterator</members>
+		<members>DeleteNetsuiteSyncRequests</members>
+		<members>DeleteNetsuiteSyncRequestsTest</members>
+		<members>EnableDisableDeleteNSRequestBatchJob</members>
+		<members>EnableDisableDeleteNSRequestBatchJobTest</members>
+		<members>GenerateSObjectFieldMapping</members>
+		<members>GenerateSObjectFieldMappingTest</members>
 		<members>ITriggerService</members>
 		<members>NSOAUTH1Service</members>
+		<members>NSSyncQuickActionHandler</members>
+		<members>NSSyncQuickActionHandlerTest</members>
 		<members>NSSyncRequestBatch</members>
 		<members>NSSyncRequestBatchHelper</members>
 		<members>NSSyncRequestBatchScheduler</members>
+		<members>NSSyncRequestBatchSchedulerTest</members>
+		<members>NSSyncRequestBatchService</members>
+		<members>NSSyncRequestTestClass</members>
 		<members>NSSyncRequestTriggerServiceImpl</members>
 		<members>NSSyncService</members>
 		<members>NSTriggerServiceImpl</members>
 		<members>TriggerFactory</members>
 		<members>TriggerService</members>
 		<members>TriggerServiceHandler</members>
-		<members>NSSyncQuickActionHandler</members>
-		<members>DeleteNetsuiteSyncRequests</members>
-		<members>EnableDisableDeleteNSRequestBatchJob</members>
-		<members>NSSyncRequestBatchService</members>
-		<members>GenerateSObjectFieldMapping</members>
-		<members>NSSyncRequestBatchSchedulerTest</members>
-		<members>NSSyncRequestTestClass</members>		
-		<members>NSSyncQuickActionHandlerTest</members>
-		<members>DeleteNetsuiteSyncRequestsTest</members>
-		<members>EnableDisableDeleteNSRequestBatchJobTest</members>
-		<members>GenerateSObjectFieldMappingTest</members>
 		<name>ApexClass</name>
 	</types>
 	<types>
@@ -38,23 +38,15 @@
 		<name>ApexTrigger</name>
 	</types>
 	<types>
-		<members>Activate_Deactivate_Connector_Objects</members>
-		<members>Connector_Config_Setup</members>
-		<members>NSInstanceConfigurations</members>
-		<members>NSSyncQuickActionFlow</members>
-		<members>Netsuite_Sync_Requests_Delete_Batch_Scheduler</members>
-		<name>Flow</name>
-	</types>
-	<types>
 		<members>Yantras_NetSuite_Connector</members>
 		<name>CustomApplication</name>
 	</types>
 	<types>
+		<members>Account.Billing_Address_Custom__c</members>
 		<members>Account.NS_Sync_Error__c</members>
 		<members>Account.Netsuite_ID__c</members>
-		<members>Account.Toggle_Sync_to_NS__c</members>
-		<members>Account.Billing_Address_Custom__c</members>
 		<members>Account.Shipping_Address_Custom__c</members>
+		<members>Account.Toggle_Sync_to_NS__c</members>
 		<members>Contact.NS_Sync_Error__c</members>
 		<members>Contact.Netsuite_Id__c</members>
 		<members>Contact.Toggle_Sync_to_NS__c</members>
@@ -69,69 +61,29 @@
 		<name>CustomField</name>
 	</types>
 	<types>
-		<members>NSConnectorTriggerConfig.Account</members>
-		<members>NSConnectorTriggerConfig.Contact</members>
-		<members>NSConnectorTriggerConfig.NS_Sync_Request</members>
-		<members>NSConnectorTriggerConfig.Opportunity</members>
-		<members>NSConnectorTriggerConfig.OpportunityLineItem</members>
-		<members>NSConnectorTriggerConfig.Product2</members>
-		<members>Field_Mappings.AccountId2</members>
-		<members>Field_Mappings.AccountId3</members>
-		<members>Field_Mappings.Amount</members>
-		<members>Field_Mappings.Billing_Address_Custom_c</members>
-		<members>Field_Mappings.Description</members>
-		<members>Field_Mappings.Email</members>
-		<members>Field_Mappings.FirstName</members>
-		<members>Field_Mappings.Id</members>
-		<members>Field_Mappings.Id2</members>
-		<members>Field_Mappings.Id3</members>
-		<members>Field_Mappings.Id4</members>
-		<members>Field_Mappings.Id5</members>
-		<members>Field_Mappings.LastName</members>
-		<members>Field_Mappings.Name</members>
-		<members>Field_Mappings.Name2</members>
-		<members>Field_Mappings.Name3</members>
-		<members>Field_Mappings.Name5</members>
-		<members>Field_Mappings.NetsuitIdc5</members>
-		<members>Field_Mappings.NetsuiteId5</members>
-		<members>Field_Mappings.Netsuite_Id_c</members>
-		<members>Field_Mappings.Netsuite_Id_c2</members>
-		<members>Field_Mappings.Phone</members>
-		<members>Field_Mappings.Phone2</members>
-		<members>Field_Mappings.Product2Id</members>
-		<members>Field_Mappings.ProductCode</members>
-		<members>Field_Mappings.Quantity</members>
-		<members>Field_Mappings.QuantityUnitOfMeasure</members>
-		<members>Field_Mappings.Shipping_Address_Custom_c</members>
-		<members>Field_Mappings.UnitPrice</members>
-		<members>Field_Mappings.Website</members>
-		<members>Object_Mapping.Account</members>
-		<members>Object_Mapping.Contact</members>
-		<members>Object_Mapping.Opportunity</members>
-		<members>Object_Mapping.OpportunityLineItem</members>
-		<members>Object_Mapping.Product2</members>
+		<members>*</members>
 		<name>CustomMetadata</name>
 	</types>
 	<types>
 		<members>Connector_Configurations__c</members>
 		<members>Field_Mapping__c</members>
+		<members>Field_Mappings__mdt</members>
 		<members>NSConnectorOauth1Config__c</members>
 		<members>NSConnectorTriggerConfig__mdt</members>
-		<members>Object_Mapping__mdt</members>
-		<members>Field_Mappings__mdt</members>
 		<members>NS_Connector_Logs__c</members>
 		<members>NS_Sandboxes__c</members>
 		<members>NS_Scripts__c</members>
 		<members>NS_Sync_Request__c</members>
+		<members>Object_Mapping__mdt</members>
 		<members>SObject_Mapping__c</members>
 		<name>CustomObject</name>
 	</types>
 	<types>
+		<members>Home</members>
+		<members>NS_Connector_Logs__c</members>
 		<members>NS_Sandboxes__c</members>
 		<members>NS_Sync_Request__c</members>
 		<members>SObject_Mapping__c</members>
-        <members>Home</members>
-        <members>NS_Connector_Logs__c</members>
 		<name>CustomTab</name>
 	</types>
 	<types>
@@ -140,9 +92,35 @@
 		<members>Field_Mapping_Record_Page</members>
 		<members>NS_Sandboxes_Record_Page2</members>
 		<members>NS_Sync_Request_Record_Page1</members>
+		<members>Netsuite_Connector_App_UtilityBar</members>
 		<members>SObject_Mapping_Record_Page</members>
-        <members>Netsuite_Connector_App_UtilityBar</members>
 		<name>FlexiPage</name>
+	</types>
+	<types>
+		<members>Activate_Deactivate_Connector_Objects</members>
+		<members>Connector_Config_Setup</members>
+		<members>NSInstanceConfigurations</members>
+		<members>NSSyncQuickActionFlow</members>
+		<members>Netsuite_Sync_Requests_Delete_Batch_Scheduler</members>
+		<name>Flow</name>
+	</types>
+	<types>
+		<members>Connector_Configurations__c-Connector Configuration Layout</members>
+		<members>Field_Mapping__c-Field Mapping Layout</members>
+		<members>Field_Mappings__mdt-Field Mapping Layout</members>
+		<members>NSConnectorTriggerConfig__mdt-NSConnectorTriggerClasses Layout</members>
+		<members>NS_Connector_Logs__c-NS Connector Logs Layout</members>
+		<members>NS_Sandboxes__c-NS Sandboxes Layout</members>
+		<members>NS_Scripts__c-NS Sync Scripts Layout</members>
+		<members>NS_Sync_Request__c-NS Sync Request Layout</members>
+		<members>Object_Mapping__mdt-Object%2FField Mapping Layout</members>
+		<members>SObject_Mapping__c-SObject Mapping Layout</members>
+		<name>Layout</name>
+	</types>
+	<types>
+		<members>NS_Connector_App_Permission</members>
+		<members>NS_Connector_Custom_Objects</members>
+		<name>PermissionSet</name>
 	</types>
 	<types>
 		<members>Account.NS_Sync</members>
@@ -151,23 +129,5 @@
 		<members>Product2.NS_Sync</members>
 		<name>QuickAction</name>
 	</types>
-    <types>
-		<members>NS_Connector_App_Permission</members>
-		<members>NS_Connector_Custom_Objects</members>
-		<name>PermissionSet</name>
-	</types>
-    <types>
-		<members>Connector_Configurations__c-Connector Configuration Layout</members>
-		<members>Field_Mapping__c-Field Mapping Layout</members>
-		<members>NSConnectorTriggerConfig__mdt-NSConnectorTriggerClasses Layout</members>
-		<members>NS_Connector_Logs__c-NS Connector Logs Layout</members>
-		<members>NS_Sandboxes__c-NS Sandboxes Layout</members>
-		<members>NS_Scripts__c-NS Sync Scripts Layout</members>
-		<members>NS_Sync_Request__c-NS Sync Request Layout</members>
-		<members>SObject_Mapping__c-SObject Mapping Layout</members>
-		<members>Field_Mappings__mdt-Field Mapping Layout</members>
-		<members>Object_Mapping__mdt-Object%2FField Mapping Layout</members>
-		<name>Layout</name>
-	</types>
-	<version>59.0</version>
+	<version>58.0</version>
 </Package>
