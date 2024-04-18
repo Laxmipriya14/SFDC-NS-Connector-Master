@@ -27,6 +27,7 @@
 		<members>TriggerFactory</members>
 		<members>TriggerService</members>
 		<members>TriggerServiceHandler</members>
+		<members>MockWebserviceClass_Test</members>
 		<name>ApexClass</name>
 	</types>
 	<types>
@@ -68,7 +69,7 @@
 		<members>Connector_Configurations__c</members>
 		<members>Field_Mapping__c</members>
 		<members>Field_Mappings__mdt</members>
-		<members>NSConnectorOauth1Config__c</members>
+		<members>NSConnectorOauth1Configs__c</members>
 		<members>NSConnectorTriggerConfig__mdt</members>
 		<members>NS_Connector_Logs__c</members>
 		<members>NS_Sandboxes__c</members>
