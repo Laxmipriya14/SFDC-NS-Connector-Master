@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
  * @group             : 
- * @last modified on  : 03-18-2024
+ * @last modified on  : 04-23-2024
  * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 **/
 public with sharing class NSSyncRequestBatch implements Database.Batchable<SObject>,Database.AllowsCallouts,Database.Stateful {
@@ -55,14 +55,16 @@ public with sharing class NSSyncRequestBatch implements Database.Batchable<SObje
 
             jsonBody = NSSyncService.createJSON(syncParentList);
          
-            resp = NSSyncService.makeCallout(jsonBody,this.sourceobjectName);                                                                                                                                                                                                                                                                                  
-            
-            if(resp.getStatusCode() == 200){
-                NSSyncService.updateNSSyncReqStatus('Processed',' ',jsonBody,resp.getBody(),scope,bc.getJobId());
-            }else{
-                throw new NSSyncService.NSSyncRequestProcessingException(resp.getStatusCode()+' : '+resp.getBody());
-            }
+            resp = NSSyncService.makeCallout(jsonBody,this.sourceobjectName);
 
+            ResponseJSONWrapper respWrap = new ResponseJSONWrapper(); 
+            respWrap = respWrap.parseJson(resp.getBody());
+
+            if( respWrap != null && String.isNotBlank(respWrap.status) && '200'.equalsIgnoreCase(respWrap.status)){
+                NSSyncService.updateNSSyncReqStatus('Processed',' ',jsonBody,resp.getBody(),scope,bc.getJobId());
+            }else if(respWrap != null && String.isNotBlank(respWrap.status)){
+                throw new NSSyncService.NSSyncRequestProcessingException(respWrap.status + ' : ' + respWrap.statusText);
+            }
         }
         Catch(Exception e){
             NSSyncService.updateNSSyncReqStatus('Failure',e.getMessage(),jsonBody,resp?.getBody(),scope,bc.getJobId());
@@ -93,5 +95,13 @@ public with sharing class NSSyncRequestBatch implements Database.Batchable<SObje
             System.debug('jobinfo ==>' + e.getMessage());
         }*/
         //Database.update(this.syncRecList,false);
+    }
+
+    public class ResponseJSONWrapper{
+        public String statusText = '';
+        public String status = '';
+        public ResponseJSONWrapper parseJson(String jsonInput){
+            return (ResponseJSONWrapper) System.JSON.deserialize(jsonInput, ResponseJSONWrapper.class);
+        }
     }
 }
