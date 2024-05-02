@@ -4,7 +4,7 @@
     <decisions>
         <name>Context</name>
         <label>Context</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>323</locationY>
         <defaultConnector>
             <targetReference>Update_PAuth1_Credentials</targetReference>
@@ -61,6 +61,9 @@
         <connector>
             <targetReference>Reset_Fields</targetReference>
         </connector>
+        <faultConnector>
+            <targetReference>Error_Log</targetReference>
+        </faultConnector>
         <inputAssignments>
             <field>Customer_Key__c</field>
             <value>
@@ -100,11 +103,41 @@
         <object>NSConnectorOauth1Configs__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
+    <recordCreates>
+        <name>Error_Log</name>
+        <label>Error Log</label>
+        <locationX>314</locationX>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>Component_Name__c</field>
+            <value>
+                <stringValue>NSInstanceConfigurations</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Error_Message__c</field>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Logging_Level__c</field>
+            <value>
+                <stringValue>ERROR</stringValue>
+            </value>
+        </inputAssignments>
+        <object>NS_Connector_Logs__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
     <recordUpdates>
         <name>Reset_Fields</name>
         <label>Reset Fields</label>
-        <locationX>182</locationX>
-        <locationY>623</locationY>
+        <locationX>314</locationX>
+        <locationY>863</locationY>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Log</targetReference>
+        </faultConnector>
         <inputAssignments>
             <field>Consumer_Key__c</field>
             <value>
@@ -134,11 +167,15 @@
     <recordUpdates>
         <name>Update_PAuth1_Credentials</name>
         <label>Update PAuth1 Credentials</label>
-        <locationX>314</locationX>
+        <locationX>578</locationX>
         <locationY>431</locationY>
         <connector>
             <targetReference>Reset_Fields</targetReference>
         </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Log</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Name</field>
@@ -180,7 +217,7 @@
         <object>NSConnectorOauth1Configs__c</object>
     </recordUpdates>
     <start>
-        <locationX>56</locationX>
+        <locationX>188</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Context</targetReference>
