@@ -100,7 +100,7 @@
                 <elementReference>$Record.Token__c</elementReference>
             </value>
         </inputAssignments>
-        <object>NSConnectorOauth1Configs__c</object>
+        <object>NSConnectorOauth1Config__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
@@ -214,7 +214,7 @@
                 <elementReference>$Record.Token__c</elementReference>
             </value>
         </inputAssignments>
-        <object>NSConnectorOauth1Configs__c</object>
+        <object>NSConnectorOauth1Config__c</object>
     </recordUpdates>
     <start>
         <locationX>188</locationX>

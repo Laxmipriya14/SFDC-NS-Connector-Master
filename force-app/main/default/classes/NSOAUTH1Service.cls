@@ -3,7 +3,7 @@
  *                      parameters : realm,consumer key,token,signature method,timestamp,nonce,version,signature      
  * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
  * @group             : 
- * @last modified on  : 04-18-2024
+ * @last modified on  : 05-02-2024
  * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 **/
 public without sharing class NSOAUTH1Service {
@@ -82,9 +82,9 @@ public without sharing class NSOAUTH1Service {
         public String nonce;
         public Oauth1Wrapper(NS_Sandboxes__c sandboxDet){
             //NSConnectorOauth1_0Config__mdt config = NSConnectorOauth1_0Config__mdt.getInstance(sandboxDet.Id);
-            Map<String,NSConnectorOauth1Configs__c> configMap = new Map<String,NSConnectorOauth1Configs__c>();
-            configMap = NSConnectorOauth1Configs__c.getall();
-            NSConnectorOauth1Configs__c config = configMap.get(sandboxDet.Id);
+            Map<String,NSConnectorOauth1Config__c> configMap = new Map<String,NSConnectorOauth1Config__c>();
+            configMap = NSConnectorOauth1Config__c.getall();
+            NSConnectorOauth1Config__c config = configMap.get(sandboxDet.Id);
             String scriptURL = sandboxDet.NS_Sync_Scripts__r.size() > 0 ? sandboxDet.NS_Sync_Scripts__r[0].Script_URL__c : null;
             this.token = config.Token__c;
             this.tokenSecret = config.Token_Secret__c;
